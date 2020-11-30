@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第五次2.0</title>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<script>
+    $(function() {
+        $("#btn").click(function() {
+            var input = $("#inp").val();
+            var pos = $("#sec-pos").val();
+            if ($("#sec-art").val() == "title") {
+                if ($("#sec-style").val() == "modify") {
+                    if ($("#sec-attr").val() == "color") {
+                        if (pos == "first") {
+                            $("h1:first").css("color", input);
+                        }
+                        if (pos == "last") {
+                            $("h1:last").css("color", input);
+                        }
+                        if (pos == "even") {
+                            $("h1:even").css("color", input);
+                        }
+                        if (pos == "odd") {
+                            $("h1:odd").css("color", input);
+                        }
+                        if (pos == "all") {
+                            $("h1").css("color", input);
+                        }
+                    }
+                    if ($("#sec-attr").val() == "bgcolor") {
+                        if (pos == "first") {
+                            $("h1:first").css("background", input);
+                        }
+                        if (pos == "last") {
+                            $("h1:last").css("background", input);
+                        }
+                        if (pos == "even") {
+                            $("h1:even").css("background", input);
+                        }
+                        if (pos == "odd") {
+                            $("h1:odd").css("background", input);
+                        }
+                        if (pos == "all") {
+                            $("h1").css("background", input);
+                        }
+                    }
+                    if ($("#sec-attr").val() == "text") {
+                        if (pos == "first") {
+                            $("h1:first").text(input);
+                        }
+                        if (pos == "last") {
+                            $("h1:last").text(input);
+                        }
+                        if (pos == "even") {
+                            $("h1:even").text(input);
+                        }
+                        if (pos == "odd") {
+                            $("h1:odd").text(input);
+                        }
+                        if (pos == "all") {
+                            $("h1").text(input);
+                        }
+                    }
+                }
+                if ($("#sec-style").val() == "delete") {
+                    console.log("1");
+                    if (pos == "first") {
+                        $("h1:first").remove();
+                    }
+                    if (pos == "last") {
+                        $("h1:last").remove();
+                    }
+                    if (pos == "even") {
+                        $("h1:even").remove();
+                    }
+                    if (pos == "odd") {
+                        $("h1:odd").remove();
+                    }
+                    if (pos == "all") {
+                        $("h1").text(input);
+                    }
+                }
+            }
+            if ($("#sec-art").val() == "body") {
+                if ($("#sec-style").val() == "modify") {
+                    if ($("#sec-attr").val() == "color") {
+                        if (pos == "first") {
+                            $("p:first").css("color", input);
+                        }
+                        if (pos == "last") {
+                            $("p:last").css("color", input);
+                        }
+                        if (pos == "even") {
+                            $("p:even").css("color", input);
+                        }
+                        if (pos == "odd") {
+                            $("p:odd").css("color", input);
+                        }
+                        if (pos == "all") {
+                            $("p").css("color", input);
+                        }
+                    }
+                    if ($("#sec-attr").val() == "bgcolor") {
+                        if (pos == "first") {
+                            $("p:first").css("background", input);
+                        }
+                        if (pos == "last") {
+                            $("p:last").css("background", input);
+                        }
+                        if (pos == "even") {
+                            $("p:even").css("background", input);
+                        }
+                        if (pos == "odd") {
+                            $("p:odd").css("background", input);
+                        }
+                        if (pos == "all") {
+                            $("p").css("background", input);
+                        }
+                    }
+                    if ($("#sec-attr").val() == "text") {
+                        if (pos == "first") {
+                            $("p:first").text(input);
+                        }
+                        if (pos == "last") {
+                            $("p:last").text(input);
+                        }
+                        if (pos == "even") {
+                            $("p:even").text(input);
+                        }
+                        if (pos == "odd") {
+                            $("p:odd").text(input);
+                        }
+                        if (pos == "all") {
+                            $("p").text(input);
+                        }
+                    }
+                }
+                if ($("#sec-style").val() == "delete") {
+                    console.log("1");
+                    if (pos == "first") {
+                        $("p:first").remove();
+                    }
+                    if (pos == "last") {
+                        $("p:last").remove();
+                    }
+                    if (pos == "even") {
+                        $("p:even").remove();
+                    }
+                    if (pos == "odd") {
+                        $("p:odd").remove();
+                    }
+                    if (pos == "all") {
+                        $("p").text(input);
+                    }
+                }
+            }
+        });
+    })
+</script>
+
+<body>
+    <h1>First Title</h1>
+    <p>First Body</p>
+    <h1>second Title</h1>
+    <p>second Body</p>
+    <h1>Third Title</h1>
+    <p>Third Body</p>
+    <h1>Forth Title</h1>
+    <p>Forth Body</p>
+    <h1>Fifth Title</h1>
+    <p>Fifth Body</p>
+    <form><b>CMD</b>
+        <select id="sec-style">
+            <option value="modify">Modify</option>
+            <option value="delete">Delete</option>
+        </select>
+        <select id="sec-attr">
+            <option value="color">Color</option>
+            <option value="bgcolor">BG-Color</option>
+            <option value="text">Text</option>
+        </select>
+        <span>to</span>
+        <input id="inp">
+        <select id="sec-pos">
+            <option value="first">First</option>
+            <option value="last">Last</option>
+            <option value="even">Even</option>
+            <option value="odd">Odd</option>
+            <option value="all">All</option>
+        </select>
+        <select id="sec-art">
+            <option value="title">Title</option>
+            <option value="body">Body</option>
+        </select>
+        <input type="button" id="btn" value="OK">
+    </form>
+</body>
+
+</html>
